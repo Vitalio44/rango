@@ -2,8 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from rango.models import Category, Page
-from rango.forms import CategoryForm
-from rango.forms import PageForm
+from rango.forms import CategoryForm, PageForm
 
 # Create your views here.
 
@@ -85,3 +84,6 @@ def add_page(request, category_name_slug):
             print(form.errors)
     context_dict = {'form':form, 'category': category}
     return render(request, 'rango/add_page.html', context_dict)
+    
+def get_category_list(cat=None):
+    return {'cats': Category.objects.all(), 'act_cat': cat}
