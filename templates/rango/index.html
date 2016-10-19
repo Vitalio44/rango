@@ -19,11 +19,8 @@
             {% if categories %}
             <ul>
             {% for category in categories %}
-            <!-- Following line changed to add an HTML hyperlink -->
                 <li>
-                    <a href="{% url 'show_category' category.slug %}">
-                        {{ category.name }}
-                    </a>
+                    <a href="{% url 'show_category' category.slug %}">{{ category.name }}</a>
                 </li>
             {% endfor %}
             </ul>
