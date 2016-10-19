@@ -17,12 +17,7 @@
         {% else %}
             <strong>No pages currently in category.</strong>
         {% endif %}
-        {% if user.is_authenticated %}
-            <a href="{% url 'add_page' category.slug %}">Add a Page</a>
-        {% else %}
-            <li><a href="{% url 'login' %}">Sign In to add Page</a></li>
-            <li><a href="{% url 'register' %}">Sign Up to add Page</a></li>
-        {% endif %}
+
     {% else %}
         The specified category does not exist!
     {% endif %}
