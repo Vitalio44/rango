@@ -5,8 +5,6 @@ from rango.models import Category, Page
 from rango.forms import CategoryForm, PageForm
 
 
-
-
 # Create your views here.
 
 def index(request):

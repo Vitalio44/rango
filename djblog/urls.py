@@ -30,9 +30,13 @@ class MyRegistrationView(RegistrationView):
 
 url(r'^accounts/register/$', MyRegistrationView.as_view(), name='registration_register'),
 
+
+
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^rango/', include('rango.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^accounts/', include('registration.backends.simple.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
