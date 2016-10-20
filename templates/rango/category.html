@@ -9,7 +9,7 @@
     {% if category %}
         <h1>{{ category.name }}</h1>
         {% if pages %}
-        <ul>
+        <ul class="nav nav-sidebar">
             {% for page in pages %}
                 <li><a href="{{ page.url }}">{{ page.title }}</a></li>
             {% endfor %}
@@ -21,4 +21,5 @@
     {% else %}
         The specified category does not exist!
     {% endif %}
+    <a href="{% url 'add_category' %}">Add a New Category</a>
 {% endblock %}
